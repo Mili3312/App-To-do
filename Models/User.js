@@ -4,10 +4,10 @@ const UserSchema = new mongoose.Schema({
     clerkUserId:{type: String, unique: true, index: true, required: true},
     nombre:{type:String, required: true, trim:true},
     email:{type:String, required:true},
-    tareas:{
+    listas:[{
         type:mongoose.Schema.Types.ObjectId,
-        ref:'Tarea'
-    },
+        ref:'Lista'
+    }],
 },
 {timestamps:true}
 )
